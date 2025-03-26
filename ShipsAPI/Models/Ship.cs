@@ -10,7 +10,7 @@
         public List<Cell> GetOccupiedCells() { return _occupiedCells; }
 
         // Vrací true, pokud jsou všechny buňky lodě zasažené
-        public bool IsSuck()
+        public bool IsSunk()
         {
             foreach (var cell in _occupiedCells)
             {

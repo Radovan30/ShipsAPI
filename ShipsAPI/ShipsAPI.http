@@ -1,6 +1,50 @@
 @ShipsAPI_HostAddress = http://localhost:5127
 
-GET {{ShipsAPI_HostAddress}}/weatherforecast/
-Accept: application/json
+# Nová hra
+POST {{ShipsAPI_HostAddress}}/api/game/new
+Content-Type: application/json
+
+{
+  "player1": "Radek",
+  "player2": "Vojta",
+  "boardSize": 10
+}
+
+###
+
+# Výstøel
+POST {{ShipsAPI_HostAddress}}/api/game/fire
+Content-Type: application/json
+
+{
+  "playerName": "Radek",
+  "x": 1,
+  "y": 5
+}
+###
+
+# Výstøel
+POST {{ShipsAPI_HostAddress}}/api/game/fire
+Content-Type: application/json
+
+{
+  "playerName": "Vojta",
+  "x": 8,
+  "y": 6
+}
+
+###
+
+
+
+
+
+# Je hra u konce?
+GET {{ShipsAPI_HostAddress}}/api/game/status
+
+###
+
+# Výherce?
+GET {{ShipsAPI_HostAddress}}/api/game/winner
 
 ###

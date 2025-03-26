@@ -33,7 +33,7 @@
         
         
         // Ziskání reference na loď, která je v dané buňce - může být i null (když tam žádná není)
-        public Ship? Ship { get { return ship; } }
+        public Ship? GetShip { get { return ship; } }
 
         // Nastaví v dné buňce část lodi
         public void SetShip(Ship ships)
