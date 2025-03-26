@@ -2,15 +2,24 @@
 {
     public class ThreeBlockShip : Ship
     {
-        public ThreeBlockShip(Cell cell) 
-        { 
-            _occupiedCells = new List<Cell>();
-            cell.SetShip(this);
+
+        public ThreeBlockShip(List<Cell> cells) 
+        {
+            if (cells.Count != 3)
+                throw new ArgumentException("3x1 loď musí mít 3 buňky");
+
+            _occupiedCells.AddRange(cells);
+
+            foreach (var cell in cells)
+            {
+                cell.SetShip(this);
+            }
+            
         }
 
         public override string GetName()
         {
-            return "1x3";
+            return "3x1";
         }
     }
 }

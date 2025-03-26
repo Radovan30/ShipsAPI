@@ -1,12 +1,12 @@
 ﻿namespace ShipsAPI.Models.Ships
 {
-    public class TwoBlockShip : Ship
+    public class CrossShip : Ship
     {
 
-        public TwoBlockShip(List<Cell> cells)
-        {
-            if (cells.Count != 2)
-                throw new ArgumentException("2x1 loď musí mít 2 buňky");
+       public CrossShip(List<Cell> cells)
+       {
+            if (cells.Count != 5)
+                throw new ArgumentException("CrossShip musí mít 5 buněk (tvar kříže)");
 
             _occupiedCells.AddRange(cells);
 
@@ -14,12 +14,11 @@
             {
                 cell.SetShip(this);
             }
-        }
+       }
 
         public override string GetName()
         {
-            return "2x1";
+            return "Cross";
         }
-
     }
 }

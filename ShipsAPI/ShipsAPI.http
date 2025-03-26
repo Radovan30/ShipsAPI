@@ -1,7 +1,7 @@
 @ShipsAPI_HostAddress = http://localhost:5127
 
 # Nová hra
-POST {{ShipsAPI_HostAddress}}/api/game/new
+POST {{ShipsAPI_HostAddress}}/api/battleship/games
 Content-Type: application/json
 
 {
@@ -12,39 +12,43 @@ Content-Type: application/json
 
 ###
 
-# Výstøel
-POST {{ShipsAPI_HostAddress}}/api/game/fire
+
+# Výstøel Player 1
+POST {{ShipsAPI_HostAddress}}/api/battleship/fire
 Content-Type: application/json
 
 {
   "playerName": "Radek",
-  "x": 1,
-  "y": 5
+  "x": 4,
+  "y": 9
 }
 ###
 
-# Výstøel
-POST {{ShipsAPI_HostAddress}}/api/game/fire
+# Výstøel Player 2
+POST {{ShipsAPI_HostAddress}}/api/battleship/fire
 Content-Type: application/json
 
 {
   "playerName": "Vojta",
-  "x": 8,
-  "y": 6
+  "x": 5,
+  "y": 3
 }
 
 ###
 
 
-
-
-
 # Je hra u konce?
-GET {{ShipsAPI_HostAddress}}/api/game/status
+GET {{ShipsAPI_HostAddress}}/api/battleship/status
 
 ###
 
 # Výherce?
-GET {{ShipsAPI_HostAddress}}/api/game/winner
+GET {{ShipsAPI_HostAddress}}/api/battleship/winner
 
 ###
+
+# Výherce?
+GET {{ShipsAPI_HostAddress}}/api/battleship/turn
+
+###
+

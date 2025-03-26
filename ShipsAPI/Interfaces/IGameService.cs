@@ -9,5 +9,6 @@ namespace ShipsAPI.Interfaces
         string Fire(string playerName, int x, int y);
         bool IsGameOver();
         string? GetWinner();
+        string GetCurrentPlayer();
     }
 }

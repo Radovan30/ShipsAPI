@@ -10,7 +10,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Uchování dat v rámci RAM pamìti serveru v rámci 1 instance
 builder.Services.AddSingleton<IGameService, GameService>();
+builder.Services.AddScoped<GameServiceHelper>();
+
 
 var app = builder.Build();
 

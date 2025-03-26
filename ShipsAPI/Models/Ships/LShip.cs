@@ -1,12 +1,12 @@
 ﻿namespace ShipsAPI.Models.Ships
 {
-    public class TwoBlockShip : Ship
+    public class LShip : Ship
     {
 
-        public TwoBlockShip(List<Cell> cells)
+        public LShip(List<Cell> cells)
         {
-            if (cells.Count != 2)
-                throw new ArgumentException("2x1 loď musí mít 2 buňky");
+            if (cells.Count != 5)
+                throw new ArgumentException("LShip musí mít 5 buněk (tvar L)");
 
             _occupiedCells.AddRange(cells);
 
@@ -18,8 +18,10 @@
 
         public override string GetName()
         {
-            return "2x1";
+            return "L-Shape";
         }
+
+
 
     }
 }
