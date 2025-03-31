@@ -114,7 +114,7 @@ namespace ShipsAPI.Models
         ];
 
 
-        //// Metoda se pokouší vložit loď do náhodné pozice, kontoluje volné místo v okolí
+        //// Metoda se pokouší vložit loď do náhodné pozice, kontroluje volné místo v okolí
         private bool TryPlaceShip(Type shipType,  List<(int dx, int dy)> baseShape)
         {
             Random rnd = new();
@@ -125,7 +125,7 @@ namespace ShipsAPI.Models
                 // Náhodné souřadnice x, y a rotace lodě
                 int x = rnd.Next(_width);
                 int y = rnd.Next(_height);
-                int rotation = shipType == typeof(OneBlockShip) ? 0 : rnd.Next(4) * 90;
+                int rotation = shipType == typeof(OneBlockShip) ? 0 : rnd.Next(4) * 90; // Kontrola jestli loď obsahuje 1 blok, pokud ano tak se neprovede otáčení jínak se otáčení provede 
 
                 var rotatedShape = RotateShape(baseShape, rotation); // Otočení původního tvaru lodě podle uhlu
                 var cells = TryPlaceCustomShip(x, y, rotatedShape);  // Umístění lodě na náhodou pozici

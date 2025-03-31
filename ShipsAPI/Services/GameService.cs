@@ -7,7 +7,7 @@ namespace ShipsAPI.Services
     {
         private Player _player1 = null!;
         private Player _player2 = null!;
-        private Player _activePlayer = null!;
+        private Player? _activePlayer = null!;
         private Player _waitingPlayer = null!;
 
         private bool _gameOver;
@@ -46,6 +46,9 @@ namespace ShipsAPI.Services
 
             if (_gameOver) 
                 return "Hra skončila!";
+
+            if (_activePlayer == null)
+                return "Není nastaven aktivní hráč";
 
             if (_activePlayer.GetName() != playerName)
                 return "Nejsi na tahu";
